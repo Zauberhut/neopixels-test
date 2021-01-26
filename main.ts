@@ -1,8 +1,15 @@
-input.calibrateCompass()
 let range = 120
 let strip = neopixel.create(DigitalPin.P0, range, NeoPixelMode.RGB)
 strip.setBrightness(255)
 let Position = range / 2
+basic.forever(function () {
+    if (Position <= 0) {
+        Position = 0
+    }
+    if (Position >= range) {
+        Position = range - 1
+    }
+})
 basic.forever(function () {
     strip.clear()
     strip.setPixelColor(Position, neopixel.colors(NeoPixelColors.Red))
