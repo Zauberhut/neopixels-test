@@ -6,7 +6,8 @@
         "radio": "*",
         "microphone": "*",
         "neopixel": "github:microsoft/pxt-neopixel#v0.7.3",
-        "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.1"
+        "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.1",
+        "TutorialSchrittzaehler": "github:zauberhut/tutorialschrittzaehler#master"
     },
     "files": [
         "main.blocks",
