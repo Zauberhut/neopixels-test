@@ -1,7 +1,9 @@
-let range = 120
-let strip = neopixel.create(DigitalPin.P0, range, NeoPixelMode.RGB)
+let range = 60
+let strip = neopixel.create(DigitalPin.P1, range, NeoPixelMode.RGB_RGB)
 strip.setBrightness(255)
 let Position = range / 2
+strip.showRainbow(1, 360)
+strip.show()
 basic.forever(function () {
     if (Position <= 0) {
         Position = 0
@@ -11,7 +13,6 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
-    strip.clear()
     strip.setPixelColor(Position, neopixel.colors(NeoPixelColors.Red))
     if (input.isGesture(Gesture.TiltLeft)) {
         Position += 1
@@ -20,5 +21,5 @@ basic.forever(function () {
         Position += -1
     }
     strip.show()
-    basic.pause(10)
+    basic.pause(100)
 })

@@ -1,11 +1,12 @@
 {
-    "name": "neopixels 120 test Lagesensor",
+    "name": "120 neopixel Tutorial Uetikon",
     "description": "",
     "dependencies": {
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "neopixel": "github:microsoft/pxt-neopixel#v0.7.3"
+        "neopixel": "github:microsoft/pxt-neopixel#v0.7.3",
+        "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.1"
     },
     "files": [
         "main.blocks",
@@ -23,9 +24,9 @@
         "config": {
             "microbit-dal": {
                 "bluetooth": {
-                    "open": 1,
-                    "whitelist": 0,
-                    "security_level": null
+                    "open": 0,
+                    "whitelist": 1,
+                    "security_level": "SECURITY_MODE_ENCRYPTION_NO_MITM"
                 }
             }
         }
