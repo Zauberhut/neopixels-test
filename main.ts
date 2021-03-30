@@ -1,12 +1,6 @@
 let strip = neopixel.create(DigitalPin.P0, 30, NeoPixelMode.RGB_RGB)
-strip.setBrightness(150)
-strip.setPixelColor(1, neopixel.colors(NeoPixelColors.White))
+strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Red))
 basic.forever(function () {
-    if (input.isGesture(Gesture.TiltLeft)) {
-        strip.rotate(1)
-    }
-    if (input.isGesture(Gesture.TiltRight)) {
-        strip.rotate(-1)
-    }
+    strip.rotate(Math.map(input.acceleration(Dimension.X), 0, 1023, 0, 4))
     strip.show()
 })
